@@ -1,0 +1,87 @@
+
+**** 01/20/13 20:55:03 *********** Evaluation PSpice (Nov 1999) **************
+
+ Bouncing Switch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+* File bounceswitch.cir
+
+S1 1 0 2 0 SMOD
+
+
+.MODEL SMOD VSWITCH(RON=1)
+
+R1 3 1 1K
+VCC 3 0 DC 5V
+V2 4 0 PWL(1E-3 0V 1.0001E-3 5V 1.01E-3 5V 1.0101E-3 0V 1.02E-3 0V 1.0201E-3 5V 1.03E-3 5V 1.0301E-3 0V 1.04E-3 0V 1.0401E-3 5V )
+
+V3 2 4 PWL(2E-3 0V 2.0001E-3 -5V 2.01E-3 -5V 2.0101E-3 0V 2.02E-3 0V 2.0201E-3 -5V 2.03E-3 -5V 2.0301E-3 0V 
++    2.04E-3 0V 2.0401E-3 -5V )
+
+
+.TRAN 20E-6 3E-3 
+.PROBE
+.END
+
+**** 01/20/13 20:55:03 *********** Evaluation PSpice (Nov 1999) **************
+
+ Bouncing Switch
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               SMOD            
+         RON    1            
+        ROFF    1.000000E+06 
+         VON    1            
+        VOFF    0            
+
+
+**** 01/20/13 20:55:03 *********** Evaluation PSpice (Nov 1999) **************
+
+ Bouncing Switch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    4.9950  (    2)    0.0000  (    3)    5.0000  (    4)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    VCC         -4.995E-06
+    V2           0.000E+00
+    V3           0.000E+00
+
+    TOTAL POWER DISSIPATION   2.50E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

@@ -1,0 +1,25 @@
+Fourth order low pass filter
+.LIB eval.lib
+
+Vin 1 0 AC 1
+
+R1 1 2 22.7k
+R2 2 3 22.7k
+X 3 4 5 6 7 LF411
+VCC 5 0 15V
+VEE 6 0 -15V
+C1 2 7 .01uF
+C2 3 0 .01uF
+C3 9 0 .01uF
+C4 8 11 .01uF
+RFk 4 7 1k
+Rf 4 0 10k
+R5 7 8 22.7k
+R6 8 9 22.7k
+X2 9 10 5 6 11 LF411
+RFk2 10 11 1k
+Rf2 10 0 10k
+
+.AC dec 1000 100 1000k
+.probe
+.end 

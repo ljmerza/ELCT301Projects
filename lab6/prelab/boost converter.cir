@@ -1,0 +1,16 @@
+Boost Converter
+.lib eval.lib
+
+Vg 1 0 12V
+CIN 1 0 22u
+L1 1 2 123.015uH
+SFET 2 0 4 0 SMOD
+.MODEL SMOD VSWITCH(RON=0.044 ROFF=10E+10 VON=0.7 VOFF=0.0)
+Vgate 4 0 PULSE(0 1 0 35n 35n 7.5u 10u)
+D1 2 3 D1N914
+Cout 3 0 33uF
+Rl 3 0 100
+
+.TRAN 1ns 10000u 10m
+.PROBE
+.END

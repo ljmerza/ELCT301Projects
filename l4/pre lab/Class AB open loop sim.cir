@@ -1,0 +1,31 @@
+Class AB Audio Amplifier Open Loop
+.lib eval.lib
+
+Vin 1 0 sin(0 0.2V 1k)
+Vcc 9 0 DC 15V
+Vee 13 0 DC -15V
+
+R1 2 0 500
+R2 2 3 12k
+Ra 3 4 510
+X0 1 2 9 13 3 LM324
+
+X1 9 6 10 Q2N6059
+X3 13 8 12 Q2N6052
+
+Ren 10 11 2.7
+Rep 12 11 2.7
+Rl 11 0 8
+
+Rd1 6 5 40
+Rd2 8 7 40
+Rb1 9 6 1400
+Rb2 13 8 1400
+
+D1 5 4 D1N914
+D2 4 7 D1N914
+
+.TRAN 1us 2ms
+.FOUR 1k 10 V(7)
+.PROBE
+.END

@@ -1,0 +1,23 @@
+Class B Audio Amplifier Open Loop
+.lib eval.lib
+
+Vin 1 0 sin(0 0.2V 1k)
+Vcc 5 0 DC 15V
+Vee 9 0 DC -15V
+
+R1 2 0 500
+R2 2 3 12k
+Ra 3 4 510
+X0 1 2 5 9 3 LM324
+
+X1 5 4 6 Q2N6059
+X3 9 4 8 Q2N6052
+
+Ren 6 7 2.7
+Rep 8 7 2.7
+Rl 7 0 100
+
+.TRAN 1us 2ms
+.FOUR 1k 10 V(7)
+.PROBE
+.END

@@ -1,0 +1,19 @@
+2nd order low pass filter
+.lib eval.lib
+
+V3 6 0 15V
+V4 7 0 -15V
+Vin 1 0 AC 1V
+
+R1 1 2 2.27k
+R2 2 3 2.27K
+C1 3 0 0.1u
+C2 2 5 0.1u
+R3 5 4 10k
+R4 4 0 10k
+
+X1 3 4 6 7 5 LM324
+
+.AC DEC 50 100 1000k
+.probe
+.END

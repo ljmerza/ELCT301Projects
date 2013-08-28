@@ -1,0 +1,25 @@
+4th order high pass filter
+.LIB eval.lib
+
+Vin 1 0 AC 1
+C1 1 2 .01uF
+C2 2 3 .01uF
+X 3 4 5 6 7 LF411
+VCC 5 0 15V
+VEE 6 0 -15V
+R2 2 7 1.77k
+R1 3 0 1.77k
+R3 7 4 1.52k
+R4 4 0 10k
+C3 7 8 .01uF
+C4 8 9 .01uF
+X2 9 10 5 6 11 LF411
+R5 8 11 1.77k
+R6 9 0 1.77k
+R7 11 10 12.35k
+R8 10 0 10k
+RL 11 0 1k
+
+.AC dec 5 100 1000k
+.probe
+.end

@@ -1,0 +1,14 @@
+GB Product
+.lib eval.lib
+
+Vin 1 0 AC 1v
+X1 0 2 4 5 3 UA741
+R1 1 2 1K
+RF 2 3 10K
+RL 3 0 10K
+VP 4 0 DC 15v
+VN 5 0 DC -15
+
+.AC DEC 100 1Hz 100MEG
+.PROBE
+.END

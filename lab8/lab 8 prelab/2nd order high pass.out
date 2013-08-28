@@ -1,0 +1,121 @@
+
+**** 04/13/13 21:53:41 *********** Evaluation PSpice (Nov 1999) **************
+
+ 4th order high pass filter
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+.LIB eval.lib
+
+Vin 1 0 AC 1
+
+C1 1 2 .01uF
+C2 2 3 .01uF
+
+X 3 4 5 6 7 LF411
+
+VCC 5 0 15V
+VEE 6 0 -15V
+
+R2 2 7 1.77k
+R1 3 0 1.77k
+R3 7 4 1.52k
+R4 4 0 10k
+
+.AC dec 5 100 1000k
+.probe
+.end
+
+**** 04/13/13 21:53:41 *********** Evaluation PSpice (Nov 1999) **************
+
+ 4th order high pass filter
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X.dx            
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+
+
+**** 04/13/13 21:53:41 *********** Evaluation PSpice (Nov 1999) **************
+
+ 4th order high pass filter
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X.jx            
+               NJF             
+         VTO   -1            
+        BETA  743.300000E-06 
+          IS   12.500000E-12 
+
+
+**** 04/13/13 21:53:41 *********** Evaluation PSpice (Nov 1999) **************
+
+ 4th order high pass filter
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)-3.779E-06  (    3) 71.37E-09  (    4)-3.227E-06      
+
+(    5)   15.0000  (    6)  -15.0000  (    7)-3.779E-06  (  X.6) 128.1E-09      
+
+(  X.7)-3.797E-06  (  X.8)-3.797E-06  (  X.9)    0.0000  ( X.10)     .6613      
+
+( X.11)   14.6610  ( X.12)   14.6610  ( X.53)   13.5000  ( X.54)  -13.5000      
+
+( X.90)-352.9E-09  ( X.91)   25.0000  ( X.92)  -25.0000  ( X.99)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    Vin          0.000E+00
+    VCC         -2.171E-03
+    VEE          2.170E-03
+    X.vb         1.281E-12
+    X.vc         1.329E-11
+    X.ve         1.273E-11
+    X.vlim      -3.529E-10
+    X.vlp       -2.500E-11
+    X.vln       -2.547E-11
+
+    TOTAL POWER DISSIPATION   6.51E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+
